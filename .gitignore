@@ -1,0 +1,44 @@
+# Xcode
+*.xcuserstate
+*.xcworkspace
+xcuserdata/
+*.xcuserdatad/
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+Package.resolved
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build/
+Carthage/Checkouts/
+
+# Build artifacts
+build/
+*.o
+*.app
+*.exe
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# User-specific files
+.DS_Store
+Thumbs.db
+
+# Other IDEs or editors
+.idea/
+.vscode/
+*.swp
+
+# SwiftPM specific files (optional)
+.swiftpm/xcode/xcuserdata/
