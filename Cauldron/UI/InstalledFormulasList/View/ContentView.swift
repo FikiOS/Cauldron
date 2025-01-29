@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var viewModel = InstalledFormulasViewModel()
+
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -16,6 +18,11 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+        .onAppear {
+            Task {
+                await viewModel.fetchInstalledFormulas()
+            }
+        }
     }
 }
 
