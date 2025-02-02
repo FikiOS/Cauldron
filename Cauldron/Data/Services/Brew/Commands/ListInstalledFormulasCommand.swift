@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ListInstalledFormulasCommand: BrewCommand { 
-    var command: Command { .info }
-    var arguments: [String] { ["--installed"] }
+struct ListInstalledFormulasCommand: BrewCommand {
+  var subCommand: SubCommand { .info }
+  var arguments: [String] { ["--installed"] }
 }

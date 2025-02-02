@@ -18,7 +18,7 @@ import SwiftUI
         error = .none
         
         do {
-            formulas = try await useCase.execute()
+            formulas = [try await useCase.execute()]
         } catch {
             self.error = error.localizedDescription
         }
