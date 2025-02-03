@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var viewModel = InstalledFormulasViewModel()
+  @State private var viewModel = InstalledFormulasViewModel()
+  @State var selection: String?
 
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-        .onAppear {
-            Task {
-                await viewModel.fetchInstalledFormulas()
-            }
-        }
+  var body: some View {
+    Table(viewModel.formulaes) {
+      TableColumn("Name", value: \.name)
+      TableColumn("Full Name", value: \.fullName)
+      TableColumn("Version", value: \.linkedKeg)
     }
+    .padding()
+    .onAppear {
+      Task {
+        await viewModel.fetchInstalledFormulaes()
+      }
+    }
+  }
 }
 
 #Preview {

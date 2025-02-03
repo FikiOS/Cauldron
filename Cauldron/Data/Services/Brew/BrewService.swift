@@ -10,36 +10,22 @@ enum BrewError: Error {
   case commandFailed(String)
 }
 
-struct ShellResult {
-  let output: String
-  let error: String
-  let status: Int32
-}
-
-enum ShellError: LocalizedError {
-  case failedToStart(Error)
-  case executionFailed(String)
-
-  var errorDescription: String? {
-    switch self {
-    case .failedToStart(let error):
-      return "Failed to start process: \(error.localizedDescription)"
-    case .executionFailed(let message):
-      return "Command failed: \(message)"
-    }
-  }
-}
-
 final class BrewService: BrewServiceProtocol {
   private let brewPath = "/opt/homebrew/bin/brew"
 
   func execute<T: Decodable>(_ command: BrewCommand) async throws -> T {
     print("Executing command: \(command.commandLine)")
 
-    return try await execute(brewPath, arguments: command.commandLine) as! T
+    let data = try await execute(brewPath, arguments: command.commandLine)
+
+    do {
+      return try JSONDecoder().decode(T.self, from: data)
+    } catch {
+      throw BrewError.decodingError
+    }
   }
 
-  private func executeWithStream(_ command: String, arguments: [String] = []) -> AsyncThrowingStream<String, Error> {
+  private func executeWithStream(_ command: String, arguments: [String] = []) -> AsyncThrowingStream<Data, Error> {
     AsyncThrowingStream { continuation in
       let process = Process()
       let pipe = Pipe()
@@ -59,7 +45,7 @@ final class BrewService: BrewServiceProtocol {
             let data = try fileHandle.read(upToCount: 1024)
             guard let data = data, !data.isEmpty else { break }
 
-            if let output = String(data: data, encoding: .utf8) { continuation.yield(output) }
+            continuation.yield(data)
           }
           continuation.finish()
         } catch { continuation.finish(throwing: error) }
@@ -67,12 +53,13 @@ final class BrewService: BrewServiceProtocol {
     }
   }
 
-  private func execute(_ command: String, arguments: [String] = []) async throws -> String {
-    var output = String.empty
-    for try await line in executeWithStream(command, arguments: arguments) {
-      output.append(line)
-      print(line)
+  private func execute(_ command: String, arguments: [String] = []) async throws -> Data {
+    var output = Data()
+    for try await data in executeWithStream(command, arguments: arguments) {
+      output.append(data)
+      print(String(data: data, encoding: .utf8))
     }
+
     return output
   }
 }

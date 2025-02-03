@@ -1,28 +1,28 @@
 import Foundation
 import SwiftUI
 
-@MainActor
 @Observable class InstalledFormulasViewModel {
-    private(set) var formulas: [String] = []
-    private(set) var error: String?
-    private(set) var isLoading = false
-    
-    private let useCase: ListInstalledFormulasUseCaseProtocol
-    
-    init(useCase: ListInstalledFormulasUseCaseProtocol = ListInstalledFormulasUseCase()) {
-        self.useCase = useCase
+  private(set) var formulaes: [Formulae] = []
+  private(set) var error: String?
+  private(set) var isLoading = false
+
+  private let useCase: ListInstalledFormulaesUseCaseProtocol
+
+  init(useCase: ListInstalledFormulaesUseCaseProtocol = ListInstalledFormulaesUseCase()) {
+    self.useCase = useCase
+  }
+
+  @MainActor
+  func fetchInstalledFormulaes() async {
+    isLoading = true
+    error = .none
+
+    do {
+      formulaes = try await useCase.installedFormulaesAndCasks()
+    } catch {
+      self.error = error.localizedDescription
     }
-    
-    func fetchInstalledFormulas() async {
-        isLoading = true
-        error = .none
-        
-        do {
-            formulas = [try await useCase.execute()]
-        } catch {
-            self.error = error.localizedDescription
-        }
-        
-        isLoading = false
-    }
+
+    isLoading = false
+  }
 }
