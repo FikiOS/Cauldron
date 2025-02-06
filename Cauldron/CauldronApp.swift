@@ -11,7 +11,7 @@ import SwiftUI
 struct CauldronApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+          MainView()
         }
     }
 }
