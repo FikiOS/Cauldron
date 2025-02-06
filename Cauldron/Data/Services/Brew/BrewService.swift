@@ -11,55 +11,29 @@ enum BrewError: Error {
 }
 
 final class BrewService: BrewServiceProtocol {
-  private let brewPath = "/opt/homebrew/bin/brew"
+  private enum Constants {
+    static let brewPath = "/opt/homebrew/bin/brew"
+  }
+
+  let connection: NSXPCConnection
+
+  init(connection: NSXPCConnection = NSXPCConnection(serviceName: "dag.fikios.ExecuteCommandService")) {
+    self.connection = connection
+  }
+
 
   func execute<T: Decodable>(_ command: BrewCommand) async throws -> T {
-    print("Executing command: \(command.commandLine)")
+    defer { connection.invalidate() }
 
-    let data = try await execute(brewPath, arguments: command.commandLine)
+    connection.remoteObjectInterface = NSXPCInterface(with: ExecuteCommandServiceProtocol.self)
+    connection.resume()
 
-    do {
-      return try JSONDecoder().decode(T.self, from: data)
-    } catch {
-      throw BrewError.decodingError
-    }
-  }
-
-  private func executeWithStream(_ command: String, arguments: [String] = []) -> AsyncThrowingStream<Data, Error> {
-    AsyncThrowingStream { continuation in
-      let process = Process()
-      let pipe = Pipe()
-
-      process.executableURL = URL(fileURLWithPath: "/usr/bin/env")
-      process.arguments = [command] + arguments
-      process.standardOutput = pipe
-      process.standardError = pipe
-
-      let fileHandle = pipe.fileHandleForReading
-
-      Task {
-        do {
-          try process.run()
-
-          while true {
-            let data = try fileHandle.read(upToCount: 1024)
-            guard let data = data, !data.isEmpty else { break }
-
-            continuation.yield(data)
-          }
-          continuation.finish()
-        } catch { continuation.finish(throwing: error) }
-      }
-    }
-  }
-
-  private func execute(_ command: String, arguments: [String] = []) async throws -> Data {
-    var output = Data()
-    for try await data in executeWithStream(command, arguments: arguments) {
-      output.append(data)
-      print(String(data: data, encoding: .utf8))
+    guard let proxy = connection.remoteObjectProxy as? ExecuteCommandServiceProtocol else {
+      throw BrewError.brewNotFound
     }
 
-    return output
+    let data = try await proxy.runCommand(path: Constants.brewPath, arguments: command.commandLine)
+
+    return try JSONDecoder().decode(T.self, from: data)
   }
 }

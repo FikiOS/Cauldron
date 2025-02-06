@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4ED358BD2D54F38800BA869F /* BrewCommandService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 4ED358B12D54F38800BA869F /* BrewCommandService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4E825A202D55541000EAC4A0 /* ExecuteCommandService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 4E825A142D55541000EAC4A0 /* ExecuteCommandService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,12 +25,12 @@
 			remoteGlobalIDString = 4E4A2CD62D44EDBE00E16A01;
 			remoteInfo = Cauldron;
 		};
-		4ED358BB2D54F38800BA869F /* PBXContainerItemProxy */ = {
+		4E825A1E2D55541000EAC4A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4E4A2CCF2D44EDBE00E16A01 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4ED358B02D54F38800BA869F;
-			remoteInfo = BrewCommandService;
+			remoteGlobalIDString = 4E825A132D55541000EAC4A0;
+			remoteInfo = ExecuteCommandService;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -41,7 +41,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
 			dstSubfolderSpec = 16;
 			files = (
-				4ED358BD2D54F38800BA869F /* BrewCommandService.xpc in Embed XPC Services */,
+				4E825A202D55541000EAC4A0 /* ExecuteCommandService.xpc in Embed XPC Services */,
 			);
 			name = "Embed XPC Services";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,21 +52,21 @@
 		4E4A2CD72D44EDBE00E16A01 /* Cauldron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cauldron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4A2CE82D44EDBF00E16A01 /* CauldronTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CauldronTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4A2CF22D44EDBF00E16A01 /* CauldronUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CauldronUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4ED358B12D54F38800BA869F /* BrewCommandService.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = BrewCommandService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E825A142D55541000EAC4A0 /* ExecuteCommandService.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = ExecuteCommandService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		4ED358C12D54F38800BA869F /* Exceptions for "BrewCommandService" folder in "BrewCommandService" target */ = {
+		4E825A242D55541000EAC4A0 /* Exceptions for "ExecuteCommandService" folder in "ExecuteCommandService" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 4ED358B02D54F38800BA869F /* BrewCommandService */;
+			target = 4E825A132D55541000EAC4A0 /* ExecuteCommandService */;
 		};
-		4ED358C42D55373400BA869F /* Exceptions for "BrewCommandService" folder in "Cauldron" target */ = {
+		4E825A262D555F3600EAC4A0 /* Exceptions for "ExecuteCommandService" folder in "Cauldron" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				BrewCommandServiceProtocol.swift,
+				ExecuteCommandServiceProtocol.swift,
 			);
 			target = 4E4A2CD62D44EDBE00E16A01 /* Cauldron */;
 		};
@@ -88,13 +88,13 @@
 			path = CauldronUITests;
 			sourceTree = "<group>";
 		};
-		4ED358B22D54F38800BA869F /* BrewCommandService */ = {
+		4E825A152D55541000EAC4A0 /* ExecuteCommandService */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				4ED358C42D55373400BA869F /* Exceptions for "BrewCommandService" folder in "Cauldron" target */,
-				4ED358C12D54F38800BA869F /* Exceptions for "BrewCommandService" folder in "BrewCommandService" target */,
+				4E825A262D555F3600EAC4A0 /* Exceptions for "ExecuteCommandService" folder in "Cauldron" target */,
+				4E825A242D55541000EAC4A0 /* Exceptions for "ExecuteCommandService" folder in "ExecuteCommandService" target */,
 			);
-			path = BrewCommandService;
+			path = ExecuteCommandService;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -121,7 +121,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4ED358AE2D54F38800BA869F /* Frameworks */ = {
+		4E825A112D55541000EAC4A0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -137,7 +137,7 @@
 				4E4A2CD92D44EDBE00E16A01 /* Cauldron */,
 				4E4A2CEB2D44EDBF00E16A01 /* CauldronTests */,
 				4E4A2CF52D44EDBF00E16A01 /* CauldronUITests */,
-				4ED358B22D54F38800BA869F /* BrewCommandService */,
+				4E825A152D55541000EAC4A0 /* ExecuteCommandService */,
 				4E4A2CD82D44EDBE00E16A01 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -148,7 +148,7 @@
 				4E4A2CD72D44EDBE00E16A01 /* Cauldron.app */,
 				4E4A2CE82D44EDBF00E16A01 /* CauldronTests.xctest */,
 				4E4A2CF22D44EDBF00E16A01 /* CauldronUITests.xctest */,
-				4ED358B12D54F38800BA869F /* BrewCommandService.xpc */,
+				4E825A142D55541000EAC4A0 /* ExecuteCommandService.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,7 +168,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				4ED358BC2D54F38800BA869F /* PBXTargetDependency */,
+				4E825A1F2D55541000EAC4A0 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				4E4A2CD92D44EDBE00E16A01 /* Cauldron */,
@@ -226,26 +226,26 @@
 			productReference = 4E4A2CF22D44EDBF00E16A01 /* CauldronUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		4ED358B02D54F38800BA869F /* BrewCommandService */ = {
+		4E825A132D55541000EAC4A0 /* ExecuteCommandService */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4ED358C22D54F38800BA869F /* Build configuration list for PBXNativeTarget "BrewCommandService" */;
+			buildConfigurationList = 4E825A232D55541000EAC4A0 /* Build configuration list for PBXNativeTarget "ExecuteCommandService" */;
 			buildPhases = (
-				4ED358AD2D54F38800BA869F /* Sources */,
-				4ED358AE2D54F38800BA869F /* Frameworks */,
-				4ED358AF2D54F38800BA869F /* Resources */,
+				4E825A102D55541000EAC4A0 /* Sources */,
+				4E825A112D55541000EAC4A0 /* Frameworks */,
+				4E825A122D55541000EAC4A0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				4ED358B22D54F38800BA869F /* BrewCommandService */,
+				4E825A152D55541000EAC4A0 /* ExecuteCommandService */,
 			);
-			name = BrewCommandService;
+			name = ExecuteCommandService;
 			packageProductDependencies = (
 			);
-			productName = BrewCommandService;
-			productReference = 4ED358B12D54F38800BA869F /* BrewCommandService.xpc */;
+			productName = ExecuteCommandService;
+			productReference = 4E825A142D55541000EAC4A0 /* ExecuteCommandService.xpc */;
 			productType = "com.apple.product-type.xpc-service";
 		};
 /* End PBXNativeTarget section */
@@ -269,7 +269,7 @@
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = 4E4A2CD62D44EDBE00E16A01;
 					};
-					4ED358B02D54F38800BA869F = {
+					4E825A132D55541000EAC4A0 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
@@ -291,7 +291,7 @@
 				4E4A2CD62D44EDBE00E16A01 /* Cauldron */,
 				4E4A2CE72D44EDBF00E16A01 /* CauldronTests */,
 				4E4A2CF12D44EDBF00E16A01 /* CauldronUITests */,
-				4ED358B02D54F38800BA869F /* BrewCommandService */,
+				4E825A132D55541000EAC4A0 /* ExecuteCommandService */,
 			);
 		};
 /* End PBXProject section */
@@ -318,7 +318,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4ED358AF2D54F38800BA869F /* Resources */ = {
+		4E825A122D55541000EAC4A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -349,7 +349,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4ED358AD2D54F38800BA869F /* Sources */ = {
+		4E825A102D55541000EAC4A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -369,10 +369,10 @@
 			target = 4E4A2CD62D44EDBE00E16A01 /* Cauldron */;
 			targetProxy = 4E4A2CF32D44EDBF00E16A01 /* PBXContainerItemProxy */;
 		};
-		4ED358BC2D54F38800BA869F /* PBXTargetDependency */ = {
+		4E825A1F2D55541000EAC4A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4ED358B02D54F38800BA869F /* BrewCommandService */;
-			targetProxy = 4ED358BB2D54F38800BA869F /* PBXContainerItemProxy */;
+			target = 4E825A132D55541000EAC4A0 /* ExecuteCommandService */;
+			targetProxy = 4E825A1E2D55541000EAC4A0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -619,47 +619,47 @@
 			};
 			name = Release;
 		};
-		4ED358BF2D54F38800BA869F /* Debug */ = {
+		4E825A212D55541000EAC4A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = BrewCommandService/BrewCommandService.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ExecuteCommandService/ExecuteCommandService.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N74TV576H8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BrewCommandService/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = BrewCommandService;
+				INFOPLIST_FILE = ExecuteCommandService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ExecuteCommandService;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dag.fikios.BrewCommandService;
+				PRODUCT_BUNDLE_IDENTIFIER = dag.fikios.ExecuteCommandService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		4ED358C02D54F38800BA869F /* Release */ = {
+		4E825A222D55541000EAC4A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = BrewCommandService/BrewCommandService.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ExecuteCommandService/ExecuteCommandService.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N74TV576H8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BrewCommandService/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = BrewCommandService;
+				INFOPLIST_FILE = ExecuteCommandService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ExecuteCommandService;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dag.fikios.BrewCommandService;
+				PRODUCT_BUNDLE_IDENTIFIER = dag.fikios.ExecuteCommandService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -702,11 +702,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4ED358C22D54F38800BA869F /* Build configuration list for PBXNativeTarget "BrewCommandService" */ = {
+		4E825A232D55541000EAC4A0 /* Build configuration list for PBXNativeTarget "ExecuteCommandService" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4ED358BF2D54F38800BA869F /* Debug */,
-				4ED358C02D54F38800BA869F /* Release */,
+				4E825A212D55541000EAC4A0 /* Debug */,
+				4E825A222D55541000EAC4A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
