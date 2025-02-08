@@ -1,7 +1,8 @@
 import Foundation
 import SwiftUI
 
-@Observable class InstalledFormulasViewModel {
+@Observable
+final class InstalledFormulasViewModel {
   private(set) var formulaes: [Formulae] = []
   private(set) var error: String?
   private(set) var isLoading = false
