@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
   @State private var viewModel = InstalledFormulasViewModel()
   @State var selection: String?
+  @Binding var numberOfInstalledFormulaes: Int
 
   var body: some View {
     Table(viewModel.formulaes) {
@@ -21,11 +22,12 @@ struct ContentView: View {
     .onAppear {
       Task {
         await viewModel.fetchInstalledFormulaes()
+        numberOfInstalledFormulaes = viewModel.formulaes.count
       }
     }
   }
 }
 
 #Preview {
-    ContentView()
+  ContentView(numberOfInstalledFormulaes: Binding.constant(100))
 }
