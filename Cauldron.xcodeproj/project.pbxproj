@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4E825A202D55541000EAC4A0 /* ExecuteCommandService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 4E825A142D55541000EAC4A0 /* ExecuteCommandService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		4E4A2CE92D44EDBF00E16A01 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,13 +25,52 @@
 			remoteGlobalIDString = 4E4A2CD62D44EDBE00E16A01;
 			remoteInfo = Cauldron;
 		};
+		4E825A1E2D55541000EAC4A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E4A2CCF2D44EDBE00E16A01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E825A132D55541000EAC4A0;
+			remoteInfo = ExecuteCommandService;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4ED358BE2D54F38800BA869F /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				4E825A202D55541000EAC4A0 /* ExecuteCommandService.xpc in Embed XPC Services */,
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4E4A2CD72D44EDBE00E16A01 /* Cauldron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cauldron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4A2CE82D44EDBF00E16A01 /* CauldronTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CauldronTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4A2CF22D44EDBF00E16A01 /* CauldronUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CauldronUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E825A142D55541000EAC4A0 /* ExecuteCommandService.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = ExecuteCommandService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		4E825A242D55541000EAC4A0 /* Exceptions for "ExecuteCommandService" folder in "ExecuteCommandService" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 4E825A132D55541000EAC4A0 /* ExecuteCommandService */;
+		};
+		4E825A262D555F3600EAC4A0 /* Exceptions for "ExecuteCommandService" folder in "Cauldron" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ExecuteCommandServiceProtocol.swift,
+			);
+			target = 4E4A2CD62D44EDBE00E16A01 /* Cauldron */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4E4A2CD92D44EDBE00E16A01 /* Cauldron */ = {
@@ -43,6 +86,15 @@
 		4E4A2CF52D44EDBF00E16A01 /* CauldronUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = CauldronUITests;
+			sourceTree = "<group>";
+		};
+		4E825A152D55541000EAC4A0 /* ExecuteCommandService */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4E825A262D555F3600EAC4A0 /* Exceptions for "ExecuteCommandService" folder in "Cauldron" target */,
+				4E825A242D55541000EAC4A0 /* Exceptions for "ExecuteCommandService" folder in "ExecuteCommandService" target */,
+			);
+			path = ExecuteCommandService;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -69,6 +121,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4E825A112D55541000EAC4A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +137,7 @@
 				4E4A2CD92D44EDBE00E16A01 /* Cauldron */,
 				4E4A2CEB2D44EDBF00E16A01 /* CauldronTests */,
 				4E4A2CF52D44EDBF00E16A01 /* CauldronUITests */,
+				4E825A152D55541000EAC4A0 /* ExecuteCommandService */,
 				4E4A2CD82D44EDBE00E16A01 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +148,7 @@
 				4E4A2CD72D44EDBE00E16A01 /* Cauldron.app */,
 				4E4A2CE82D44EDBF00E16A01 /* CauldronTests.xctest */,
 				4E4A2CF22D44EDBF00E16A01 /* CauldronUITests.xctest */,
+				4E825A142D55541000EAC4A0 /* ExecuteCommandService.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,10 +163,12 @@
 				4E4A2CD32D44EDBE00E16A01 /* Sources */,
 				4E4A2CD42D44EDBE00E16A01 /* Frameworks */,
 				4E4A2CD52D44EDBE00E16A01 /* Resources */,
+				4ED358BE2D54F38800BA869F /* Embed XPC Services */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4E825A1F2D55541000EAC4A0 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				4E4A2CD92D44EDBE00E16A01 /* Cauldron */,
@@ -163,6 +226,28 @@
 			productReference = 4E4A2CF22D44EDBF00E16A01 /* CauldronUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		4E825A132D55541000EAC4A0 /* ExecuteCommandService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E825A232D55541000EAC4A0 /* Build configuration list for PBXNativeTarget "ExecuteCommandService" */;
+			buildPhases = (
+				4E825A102D55541000EAC4A0 /* Sources */,
+				4E825A112D55541000EAC4A0 /* Frameworks */,
+				4E825A122D55541000EAC4A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4E825A152D55541000EAC4A0 /* ExecuteCommandService */,
+			);
+			name = ExecuteCommandService;
+			packageProductDependencies = (
+			);
+			productName = ExecuteCommandService;
+			productReference = 4E825A142D55541000EAC4A0 /* ExecuteCommandService.xpc */;
+			productType = "com.apple.product-type.xpc-service";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -184,6 +269,9 @@
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = 4E4A2CD62D44EDBE00E16A01;
 					};
+					4E825A132D55541000EAC4A0 = {
+						CreatedOnToolsVersion = 16.2;
+					};
 				};
 			};
 			buildConfigurationList = 4E4A2CD22D44EDBE00E16A01 /* Build configuration list for PBXProject "Cauldron" */;
@@ -203,6 +291,7 @@
 				4E4A2CD62D44EDBE00E16A01 /* Cauldron */,
 				4E4A2CE72D44EDBF00E16A01 /* CauldronTests */,
 				4E4A2CF12D44EDBF00E16A01 /* CauldronUITests */,
+				4E825A132D55541000EAC4A0 /* ExecuteCommandService */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +312,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4E4A2CF02D44EDBF00E16A01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E825A122D55541000EAC4A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,6 +349,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4E825A102D55541000EAC4A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -265,6 +368,11 @@
 			isa = PBXTargetDependency;
 			target = 4E4A2CD62D44EDBE00E16A01 /* Cauldron */;
 			targetProxy = 4E4A2CF32D44EDBF00E16A01 /* PBXContainerItemProxy */;
+		};
+		4E825A1F2D55541000EAC4A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E825A132D55541000EAC4A0 /* ExecuteCommandService */;
+			targetProxy = 4E825A1E2D55541000EAC4A0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -329,6 +437,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -384,6 +493,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
@@ -509,6 +619,50 @@
 			};
 			name = Release;
 		};
+		4E825A212D55541000EAC4A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ExecuteCommandService/ExecuteCommandService.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N74TV576H8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ExecuteCommandService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ExecuteCommandService;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dag.fikios.ExecuteCommandService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4E825A222D55541000EAC4A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ExecuteCommandService/ExecuteCommandService.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N74TV576H8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ExecuteCommandService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ExecuteCommandService;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dag.fikios.ExecuteCommandService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -544,6 +698,15 @@
 			buildConfigurations = (
 				4E4A2D032D44EDBF00E16A01 /* Debug */,
 				4E4A2D042D44EDBF00E16A01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E825A232D55541000EAC4A0 /* Build configuration list for PBXNativeTarget "ExecuteCommandService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E825A212D55541000EAC4A0 /* Debug */,
+				4E825A222D55541000EAC4A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

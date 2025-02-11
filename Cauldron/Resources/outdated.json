@@ -1,0 +1,67 @@
+{
+  "formulae": [
+    {
+      "name": "eza",
+      "installed_versions": [
+        "0.20.19"
+      ],
+      "current_version": "0.20.20",
+      "pinned": false,
+      "pinned_version": null
+    },
+    {
+      "name": "nss",
+      "installed_versions": [
+        "3.107"
+      ],
+      "current_version": "3.108",
+      "pinned": false,
+      "pinned_version": null
+    },
+    {
+      "name": "poppler",
+      "installed_versions": [
+        "25.01.0"
+      ],
+      "current_version": "25.02.0",
+      "pinned": false,
+      "pinned_version": null
+    },
+    {
+      "name": "python@3.12",
+      "installed_versions": [
+        "3.12.8"
+      ],
+      "current_version": "3.12.9",
+      "pinned": false,
+      "pinned_version": null
+    },
+    {
+      "name": "python@3.13",
+      "installed_versions": [
+        "3.13.1"
+      ],
+      "current_version": "3.13.2",
+      "pinned": false,
+      "pinned_version": null
+    },
+    {
+      "name": "tig",
+      "installed_versions": [
+        "2.5.11"
+      ],
+      "current_version": "2.5.12",
+      "pinned": false,
+      "pinned_version": null
+    }
+  ],
+  "casks": [
+    {
+      "name": "tuist",
+      "installed_versions": [
+        "4.40.0"
+      ],
+      "current_version": "4.41.0"
+    }
+  ]
+}
