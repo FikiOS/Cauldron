@@ -15,29 +15,15 @@ struct LeftMenuView: View {
   var body: some View {
     List(selection: $selectedMenu) {
       Section("Formulas") {
-        SidebarItem(icon: "newspaper", title: "Formulas", badge: numberOfInstalledFormulas)
-        SidebarItem(icon: "arrow.triangle.2.circlepath", title: "Casks", badge: numberOfInstalledCasks)
+        LeftMenuItemView(icon: "newspaper", title: "Formulas", badge: numberOfInstalledFormulas)
+        LeftMenuItemView(icon: "arrow.triangle.2.circlepath", title: "Casks", badge: numberOfInstalledCasks)
       }
       Section("Tools") {
-        SidebarItem(icon: "stethoscope", title: "Analytics")
-        SidebarItem(icon: "clock.arrow.circlepath", title: "Log")
+        LeftMenuItemView(icon: "stethoscope", title: "Analytics")
+        LeftMenuItemView(icon: "clock.arrow.circlepath", title: "Log")
       }
     }
     .listStyle(SidebarListStyle())
-  }
-}
-
-struct SidebarItem: View {
-  var icon: String
-  var title: String
-  var badge: Int = .zero
-
-  var body: some View {
-    HStack {
-      Label(title, systemImage: icon)
-        .badge(badge)
-    }
-    .tag(title)
   }
 }
 
