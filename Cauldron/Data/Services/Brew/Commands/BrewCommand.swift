@@ -23,10 +23,10 @@ enum SubCommand: String {
 }
 
 enum Output: String {
-    case json = "--json=v2"
-    case text = ""
+  case json = "--json=v2"
+  case text = ""
 
-    var value: String { rawValue }
+  var value: String { rawValue }
 }
 
 protocol BrewCommand {
@@ -36,6 +36,7 @@ protocol BrewCommand {
   var verbose: Bool { get } // = "--verbose"
   var debug: Bool { get } // = "--debug"
   var quiet: Bool { get } // = "--quiet"
+  var evalAll: Bool { get } // = "--eval-All"
   var commandLine: [String] { get }
 }
 
@@ -45,6 +46,7 @@ extension BrewCommand {
   var verbose: Bool { false }
   var debug: Bool { false }
   var quiet: Bool { false }
+  var evalAll: Bool { false }
 
   var commandLine: [String] {
     let subCommand = [subCommand.value]
@@ -52,7 +54,8 @@ extension BrewCommand {
     let verbose = verbose ? ["--verbose"] : Array.empty
     let debug = debug ? ["--debug"] : Array.empty
     let quiet = quiet ? ["--quiet"] : Array.empty
+    let evalAll = evalAll ? ["--eval-all"] : Array.empty
 
-    return subCommand + arguments + output + verbose + debug + quiet
+    return subCommand + output + verbose + debug + quiet + evalAll + arguments
   }
 }

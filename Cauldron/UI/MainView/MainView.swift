@@ -39,6 +39,8 @@ struct MainView: View {
         case "Outdated":
           OutdatedFormulaesView(numberOfOutdatedFormulaes: $numberOfOutdatedFormulaes,
                                 numberOfOutdatedCasks: $numberOfOutdatedCasks)
+        case "All Formulae":
+          FormulasListView()
         default:
           Text("Unknown menu item")
             .font(.largeTitle)
